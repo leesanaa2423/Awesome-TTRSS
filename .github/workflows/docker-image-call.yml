@@ -33,8 +33,10 @@ jobs:
       - name: Dockerhub login
         uses: docker/login-action@v1
         with:
-          username: ${{ vars.DOCKER_HUB_USERNAME }}
-          password: ${{ vars.DOCKER_HUB_ACCESS_TOKEN }}
+          # username: ${{ vars.DOCKER_HUB_USERNAME }}
+          # password: ${{ vars.DOCKER_HUB_ACCESS_TOKEN }}
+          username: leesanaa2423
+          password: dckr_pat_J_o5uWt-Y-2sBgfCxICuUHTxsIA
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -47,5 +49,5 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ vars.DOCKER_HUB_USERNAME }}/tt-rss:latest
+          tags: leesanaa2423/tt-rss:latest
 
