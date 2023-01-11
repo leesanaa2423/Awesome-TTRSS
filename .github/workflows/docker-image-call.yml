@@ -4,21 +4,21 @@ on:
   workflow_call:
     inputs:
       config-path:
-        required: true
+        required: false
         type: string
     secrets:
       envPAT:
-        required: true
+        required: false
 jobs:
         
   release:
     runs-on: ubuntu-latest
-    environment: production
+    # environment: production
     steps:
-      - uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.envPAT }}
-          configuration-path: ${{ inputs.config-path }}
+      # - uses: actions/labeler@v4
+      #   with:
+      #     repo-token: ${{ secrets.envPAT }}
+      #     configuration-path: ${{ inputs.config-path }}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set date
