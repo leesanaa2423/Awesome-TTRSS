@@ -4,11 +4,11 @@ on:
   workflow_call:
     inputs:
       config-path:
-        required: false
+        required: true
         type: string
     secrets:
       envPAT:
-        required: false
+        required: true
 jobs:
   reusable_workflow_job:
     runs-on: ubuntu-latest
@@ -16,9 +16,8 @@ jobs:
     steps:
     - uses: actions/labeler@v4
       with:
-        # repo-token: ${{ secrets.envPAT }}
-        # configuration-path: ${{ inputs.config-path }}
-        configuration-path: './*'
+         repo-token: ${{ secrets.envPAT }}
+         configuration-path: ${{ inputs.config-path }}
         
   release:
     runs-on: ubuntu-latest
