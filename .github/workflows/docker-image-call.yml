@@ -10,16 +10,16 @@ on:
       envPAT:
         required: false
 jobs:
-  # reusable_workflow_job:
-  #   runs-on: ubuntu-latest
-  #   environment: production
-  #   steps:
-  #   - uses: actions/labeler@v4
-  #     with:
-  #       repo-token: ${{ secrets.envPAT }}
-  #       configuration-path: ${{ inputs.config-path }}
-        
   reusable_workflow_job:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - uses: actions/labeler@v4
+      with:
+        # repo-token: ${{ secrets.envPAT }}
+        configuration-path: ${{ inputs.config-path }}
+        
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
