@@ -3,10 +3,9 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-    paths: ["src/**","Dockerfile","docker-entrypoint.sh"]
   pull_request:
     branches: [ "main" ]
-
+    
 jobs:
   release:
     runs-on: ubuntu-latest
