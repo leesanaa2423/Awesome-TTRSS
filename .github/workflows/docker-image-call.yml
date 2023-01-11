@@ -18,7 +18,7 @@ jobs:
       with:
         # repo-token: ${{ secrets.envPAT }}
         # configuration-path: ${{ inputs.config-path }}
-        configuration-path: ['./*', './src/*']
+        configuration-path: './*'
         
   release:
     runs-on: ubuntu-latest
