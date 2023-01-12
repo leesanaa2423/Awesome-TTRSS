@@ -1,10 +1,10 @@
 version: "3"
 services:
   service.rss:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
-    image: leesanaa2423/tt-rss:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: leesanaa2423/tt-rss:latest
     container_name: ttrss
     ports:
       - 181:80
