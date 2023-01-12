@@ -1,4 +1,4 @@
-name: "[tester] CI for tests"
+name: CI for tests
 
 on:
   pull_request:
