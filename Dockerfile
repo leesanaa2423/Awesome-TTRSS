@@ -70,7 +70,7 @@ RUN curl -sL https://github.com/DIYgod/ttrss-theme-rsshub/archive/master.tar.gz 
 
 FROM docker.io/alpine:3
 
-LABEL maintainer="Henry<hi@henry.wang>"
+# LABEL maintainer="Henry<hi@henry.wang>"
 
 WORKDIR /var/www
 

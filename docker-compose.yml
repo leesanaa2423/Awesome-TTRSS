@@ -1,12 +1,12 @@
 version: "3"
 services:
   service.rss:
-    image: leesanaa2423/ttrss:latest
+    image: leesanaa2423/tt-rss:latest
     container_name: ttrss
     ports:
       - 181:80
     environment:
-      - SELF_URL_PATH=http://localhost:181/ # please change to your own domain
+      - SELF_URL_PATH=http://45.76.185.215:181/ # please change to your own domain
       - DB_PASS=ttrss # use the same password defined in `database.postgres`
       - PUID=1000
       - PGID=1000
@@ -40,11 +40,14 @@ services:
   database.postgres:
     image: postgres:13-alpine
     container_name: postgres
+    ports:
+      - 5432:5432
     environment:
       - POSTGRES_PASSWORD=ttrss # feel free to change the password
     volumes:
       - ~/postgres/data/:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host
     networks:
+      - public_access
       - database_only
     restart: always
 
