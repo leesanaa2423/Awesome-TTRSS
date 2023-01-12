@@ -4,18 +4,10 @@ on:
   pull_request:
     branches:
       - "master"
-    paths:
-      - "src/**"
-      - "Dockerfile"
-      - "docker-entrypoint.sh"
   push:
     branches:
       - "*"
       # - "!main"
-    paths:
-      - "src/**"
-      - "Dockerfile"
-      - "docker-entrypoint.sh"
 
 jobs:
   test:
